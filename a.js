@@ -93,3 +93,36 @@
     },
   ],
 });
+
+({
+  status: true,
+  data: {
+    mainFeatures: {
+      storage: "128GB/256GB/1TB storage, no card slot",
+      displaySize: "6.7 inches, 109.8 cm2 (~87.4% screen-to-body ratio)",
+      chipSet: "Apple A15 Bionic (5 nm)",
+      memory: "128GB 6GB RAM, 256GB 6GB RAM, 512GB 6GB RAM, 1TB 6GB RAM",
+      sensors: [
+        "Face ID",
+        "accelerometer",
+        "gyro",
+        "proximity",
+        "compass",
+        "barometer",
+      ],
+    },
+    slug: "apple_iphone_13_pro_max-11089",
+    name: "iPhone 13 Pro Max",
+    releaseDate: "Released 2021, September 24",
+    brand: "Apple",
+    image: "https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro-max.jpg",
+    others: {
+      WLAN: "Wi-Fi 802.11 a/b/g/n/ac/6, dual-band, hotspot",
+      Bluetooth: "5.0, A2DP, LE",
+      GPS: "Yes, with A-GPS, GLONASS, GALILEO, BDS, QZSS",
+      NFC: "Yes",
+      Radio: "No",
+      USB: "Lightning, USB 2.0",
+    },
+  },
+});

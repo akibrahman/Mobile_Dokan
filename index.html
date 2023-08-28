@@ -13,11 +13,11 @@
       type="text/css"
     />
   </head>
-  <body class="mb-40">
+  <body class="relative">
     <header class="container mx-auto">
       <nav class="flex items-center justify-between mt-14">
         <p class="capitalize text-3xl font-bold">hot gadgets</p>
-        <button class="btn btn-info capitalize font-bold text-xl">
+        <button class="btn btn-info capitalize font-bold text-lg">
           sign up
         </button>
       </nav>
@@ -32,9 +32,9 @@
         </button>
       </div>
       <div class="flex justify-center items-end mt-6">
-        <img class="h-[600px]" src="./main.png" alt="" />
-        <img class="" src="./main.png" alt="" />
-        <img class="h-[600px]" src="./main.png" alt="" />
+        <img class="h-[600px]" src="./images/main.png" alt="" />
+        <img class="" src="./images/main.png" alt="" />
+        <img class="h-[600px]" src="./images/main.png" alt="" />
       </div>
     </header>
     <main class="container mx-auto">
@@ -43,83 +43,86 @@
       </h1>
       <div class="flex justify-center mt-8">
         <input
+          id="inputSearch"
           type="text"
           placeholder="Search your phone"
           class="focus:outline-none input input-bordered w-full max-w-lg rounded-e-none"
         />
         <button
           class="btn btn-info rounded-s-none font-bold capitalize text-lg"
+          id="searchButton"
         >
           Search
         </button>
       </div>
-      <div id="phonesContainer" class="grid grid-cols-3 gap-y-11 mt-10">
-        <!-- !Phone Card -->
-        <div
-          class="w-96 p-5 border rounded-md flex flex-col items-center gap-4"
-        >
-          <div class="bg-slate-700 w-full py-10 rounded-md">
-            <img
-              src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-mini.jpg"
-              alt=""
-              class="block mx-auto rounded-lg scale-90"
-            />
-          </div>
-          <h1 class="text-2xl font-bold">Iphone 13 pro max</h1>
-          <p class="text-center text-lg">
-            There are many variations of passages of available, but the majority
-            have suffered
+      <div class="flex justify-center">
+        <!--! Phones Container  -->
+        <div id="phonesContainer" class="grid grid-cols-3 gap-8 mt-10"></div>
+        <div class="flex flex-col">
+          <span
+            id="loader"
+            class="hidden mt-10 loading loading-ring loading-lg w-40 mx-auto"
+          ></span>
+          <p id="beforeSearch" class="text-3xl text-center mt-10">
+            Search to see Smart Phones
           </p>
-          <p class="text-2xl font-bold">$999</p>
-          <button class="btn tbn-sm btn-info capitalize font-bold text-lg">
-            show details
-          </button>
-        </div>
-        <!-- !Phone Card -->
-        <div
-          class="w-96 p-5 border rounded-md flex flex-col items-center gap-4"
-        >
-          <div class="bg-slate-700 w-full py-10 rounded-md">
-            <img
-              src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-mini.jpg"
-              alt=""
-              class="block mx-auto rounded-lg scale-90"
-            />
-          </div>
-          <h1 class="text-2xl font-bold">Iphone 13 pro max</h1>
-          <p class="text-center text-lg">
-            There are many variations of passages of available, but the majority
-            have suffered
-          </p>
-          <p class="text-2xl font-bold">$999</p>
-          <button class="btn tbn-sm btn-info capitalize font-bold text-lg">
-            show details
-          </button>
-        </div>
-        <!-- !Phone Card -->
-        <div
-          class="w-96 p-5 border rounded-md flex flex-col items-center gap-4"
-        >
-          <div class="bg-slate-700 w-full py-10 rounded-md">
-            <img
-              src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-mini.jpg"
-              alt=""
-              class="block mx-auto rounded-lg scale-90"
-            />
-          </div>
-          <h1 class="text-2xl font-bold">Iphone 13 pro max</h1>
-          <p class="text-center text-lg">
-            There are many variations of passages of available, but the majority
-            have suffered
-          </p>
-          <p class="text-2xl font-bold">$999</p>
-          <button class="btn tbn-sm btn-info capitalize font-bold text-lg">
-            show details
-          </button>
         </div>
       </div>
+      <button
+        id="showAll"
+        class="hidden btn btn-info capitalize mx-auto block my-5 font-bold text-lg"
+      >
+        show all
+      </button>
     </main>
-    <footer></footer>
-    <script src="./main.js"></script>
+    <footer class="bg-slate-700 mt-16">
+      <div class="container mx-auto">
+        <div class="flex justify-between border-b py-14">
+          <div class="flex flex-col gap-3">
+            <h1 class="text-5xl font-bold capitalize">hot gadgets</h1>
+            <h1 class="text-lg font-semibold">You can definitely work.</h1>
+          </div>
+          <div class="flex gap-5 items-center">
+            <img class="scale-90" src="./images/social.png" alt="" />
+            <button class="btn btn-info capitalize font-bold">
+              join premium
+            </button>
+          </div>
+        </div>
+        <div class="flex justify-between mt-5 text-lg font-semibold py-7 pb-20">
+          <div class="flex flex-col gap-3">
+            <p>Product</p>
+            <p>Browse Jobs</p>
+            <p>Remote Jobs</p>
+            <p>Startup Jobs</p>
+            <p>Copmpany Jobs</p>
+          </div>
+          <div class="flex flex-col gap-3">
+            <p>Product</p>
+            <p>Browse Jobs</p>
+            <p>Remote Jobs</p>
+            <p>Startup Jobs</p>
+            <p>Copmpany Jobs</p>
+          </div>
+          <div class="flex flex-col gap-3">
+            <p>Product</p>
+            <p>Browse Jobs</p>
+            <p>Remote Jobs</p>
+            <p>Startup Jobs</p>
+            <p>Copmpany Jobs</p>
+          </div>
+          <div class="flex flex-col gap-3">
+            <p>Product</p>
+            <p>Browse Jobs</p>
+            <p>Remote Jobs</p>
+            <p>Startup Jobs</p>
+            <p>Copmpany Jobs</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--! Modal -->
+    <div class="w-full h-screen fixed bg-black">a</div>
   </body>
+  <script src="./main.js"></script>
 </html>
