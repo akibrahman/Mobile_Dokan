@@ -4,6 +4,8 @@ const phonesContainer = document.getElementById("phonesContainer");
 const showAll = document.getElementById("showAll");
 const beforeSearch = document.getElementById("beforeSearch");
 const loader = document.getElementById("loader");
+const modal = document.getElementById("modal");
+const modalContent = document.getElementById("modalContent");
 
 searchButton.addEventListener("click", () => {
   let inputSearchText = inputSearch.value;
@@ -84,5 +86,94 @@ const displaPhones = (phonesArray) => {
 };
 
 const displayModal = (slug) => {
-  console.log(slug);
+  modal.classList.remove("hidden");
+  modalContent.innerHTML = "";
+  modalContent.innerHTML = `<span class="loading loading-ring loading-lg w-52"></span>`;
+  const url = `https://openapi.programming-hero.com/api/phone/${slug}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      createModal(data.data);
+    });
+};
+
+const createModal = (phoneInfo) => {
+  let modalInner = `
+    
+        <div class="w-[90%] mx-auto  bg-slate-500 rounded-lg py-4">
+          <img  class="mx-auto rounded-lg w-[110px]" src=" ${
+            phoneInfo.image
+          }" alt="" />
+        </div>
+        <div class="w-[90%] mx-auto mt-4">
+          <p class="text-3xl font-bold mb-4 capitalize text-center">
+            ${phoneInfo.name}
+          </p>
+          <p class="text-lg font-semibold mb-1">
+            Storage:
+            <span class="font-normal text-stone-800 text-base">${
+              phoneInfo.mainFeatures.storage
+            }</span>
+          </p>
+          <p class="text-lg font-semibold mb-1">
+            Display Size:
+            <span class="font-normal text-stone-800 text-base">${
+              phoneInfo.mainFeatures.displaySize
+            }</span>
+          </p>
+          <p class="text-lg font-semibold mb-1">
+            Chipset:
+            <span class="font-normal text-stone-800 text-base">${
+              phoneInfo.mainFeatures.chipSet
+            }</span>
+          </p>
+          <p class="text-lg font-semibold mb-1">
+            Memory:
+            <span class="font-normal text-stone-800 text-base">${
+              phoneInfo.mainFeatures.memory
+            }</span>
+          </p>
+          <p class="text-lg font-semibold mb-1">
+            Release data:
+            <span class="font-normal text-stone-800 text-base">${
+              phoneInfo.releaseDate
+            }</span>
+          </p>
+          <p class="text-lg font-semibold mb-1">
+            Brand:
+            <span class="font-normal text-stone-800 text-base">${
+              phoneInfo.brand
+            }</span>
+          </p>
+          <p class="text-lg font-semibold mb-1">
+            GPS:
+            <span class="font-normal text-stone-800 text-base">${
+              phoneInfo?.others ? phoneInfo.others.GPS : "No GPS Feature"
+            }</span>
+          </p>
+          <div class="flex">
+            <button onclick="closeModal()" class="btn btn-sm my-4 mx-auto block capitalize">
+              Close
+            </button>
+            <button onclick="savePDF()" class="btn btn-sm my-4 mx-auto block capitalize">
+              Save PDF
+            </button>
+          </div>
+        </div>
+     
+    `;
+  modalContent.innerHTML = modalInner;
+};
+const closeModal = () => {
+  modal.classList.add("hidden");
+};
+const savePDF = () => {
+  let opt = {
+    margin: 0.7,
+    filename: "Phone Details",
+    image: { type: "jpg", quality: 1 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+  };
+  html2pdf(modalContent, opt);
 };

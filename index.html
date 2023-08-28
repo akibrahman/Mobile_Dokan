@@ -4,16 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mobile Dokan</title>
-    <!-- Tailwind -->
+    <!--! Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Flowbite -->
+    <!-- !DaisyUI -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css"
       rel="stylesheet"
       type="text/css"
     />
+    <!--! HTML2PDF.js  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.2/html2pdf.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
-  <body class="relative">
+  <body class="">
+    <!--! Modal -->
+    <div
+      id="modal"
+      class="hidden z-50 h-screen w-full fixed top-0 backdrop-brightness-50 backdrop-blur-sm flex items-center justify-center"
+    >
+      <div
+        id="modalContent"
+        class="w-[500px] h-auto bg-slate-700 rounded-lg pt-4"
+      ></div>
+    </div>
     <header class="container mx-auto">
       <nav class="flex items-center justify-between mt-14">
         <p class="capitalize text-3xl font-bold">hot gadgets</p>
@@ -121,8 +134,6 @@
         </div>
       </div>
     </footer>
-    <!--! Modal -->
-    <div class="w-full h-screen fixed bg-black">a</div>
   </body>
   <script src="./main.js"></script>
 </html>
